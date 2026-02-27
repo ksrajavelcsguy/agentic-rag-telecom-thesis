@@ -1,0 +1,35 @@
+project:
+  name: agentic-rag-telecom-thesis
+  run_id: "TBD-run-001"
+
+data:
+  multiwoz_path: "data/raw/multiwoz2.4"
+  doc2dial_path: "data/raw/doc2dial_hf"
+  subset:
+    enabled: true
+    seed: 42
+    dialogues: TBD
+    documents: TBD
+
+chunking:
+  method: "recursive"
+  chunk_size: TBD
+  chunk_overlap: TBD
+
+retrieval:
+  vectorstore: "chroma"
+  top_k: TBD
+  score_threshold: TBD
+
+models:
+  path: "B"                 # B = Non-API/local for now
+  embedding_model: TBD      # e.g., all-MiniLM-L6-v2 (later)
+  llm_model: TBD            # e.g., llama3 (later)
+
+generation:
+  temperature: 0.2
+  max_tokens: 512
+
+logging:
+  save_traces: true
+  traces_dir: "results/traces"
